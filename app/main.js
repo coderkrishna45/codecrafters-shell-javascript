@@ -9,5 +9,5 @@ const rl = readline.createInterface({
 rl.prompt();
 
 rl.on('line', (input) => {
-  console.log(`${input} command not found`);
+  console.log(`${input}: command not found`);
 });
