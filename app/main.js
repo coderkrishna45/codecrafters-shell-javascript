@@ -6,19 +6,17 @@ const rl = readline.createInterface({
   prompt: "$ ",
 });
 
-rl.prompt();
-rl.on('line', (input) => {
-  // previous submission was working but conceptually wrong this is correct for previous challange
-  if (input === "exit 0" || input === "exit") {
+rl.prompt();rl.on("line", (command) => {
+  if (command === "exit 0" || command === "exit") {
     rl.close();
     return;
+  } else if (command === "echo") {
+    console.log("");
+  } else if (command.startsWith("echo ")) {
+    console.log(command.slice(5));
+  } else {
+    console.log(`${command}: command not found`);
   }
-  let present = input.includes('echo');
-  if(present){
-    let result = input.replace('echo ','');
-    console.log(`${result}`);
-  }else{
-    console.log(`${input}: command not found`);
-  }
+
   rl.prompt();
 });
