@@ -18,7 +18,7 @@ rl.on('line', (input) => {
     let result = input.replace('echo ','');
     console.log(`${result}`);
   }else{
-    console.log(`${input}: invalid command`);
+    console.log(`${input}: command not found`);
   }
   rl.prompt();
 });
