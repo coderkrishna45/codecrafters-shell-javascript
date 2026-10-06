@@ -8,7 +8,17 @@ const rl = readline.createInterface({
 
 rl.prompt();
 rl.on('line', (input) => {
-if(input==='exit') process.exit(127);
-console.log(`${input}: command not found`);
-rl.prompt();
+  // previous submission was working but conceptually wrong this is correct for previous challange
+  if (input === "exit 0" || input === "exit") {
+    rl.close();
+    return;
+  }
+  let present = input.includes('echo');
+  if(present){
+    let result = input.replace('echo ','');
+    console.log(`${result}`);
+  }else{
+    console.log(`${input}: invalid command`);
+  }
+  rl.prompt();
 });
