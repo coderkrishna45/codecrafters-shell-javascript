@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 
 rl.prompt();
 rl.on('line', (input) => {
-if(input==='exit') process.exit(1);
+if(input==='exit') process.exit(127);
 console.log(`${input}: command not found`);
 rl.prompt();
 });
