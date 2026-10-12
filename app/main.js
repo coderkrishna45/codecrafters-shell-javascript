@@ -19,7 +19,7 @@ rl.prompt();rl.on("line", (command) => {
     if(unordered_Set.has(targetCommand)){
       console.log(`${targetCommand} is a shell builtin`);
     }else{
-      console.log(`${targetCommand}: command not found`);
+      console.log(`${targetCommand}: not found`);
     }
   } else {
     console.log(`${command}: command not found`);
